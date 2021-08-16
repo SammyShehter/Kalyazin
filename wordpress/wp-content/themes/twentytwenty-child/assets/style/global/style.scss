@@ -1,0 +1,37 @@
+/*!
+Theme Name: Home
+Author: Sammy Shehter
+Author URI: http://Sammy%20Shehter
+Description: Website for Tatiana
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: home
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+
+// Import variables and mixins.
+@import "abstracts/abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+@import "generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "generic/box-sizing";
+
+
+a{
+    text-decoration: none;
+}

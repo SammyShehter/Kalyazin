@@ -1,0 +1,13 @@
+docker-compose/logs/apache2/*.log
+docker-compose/data/mysql/*.pem
+docker-compose/data/mysql/sys
+docker-compose/data/mysql/performance_schema/
+wordpress/wp-content/plugins
+!wordpress/wp-content/uploads
+wordpress/wp-content/themes/*
+!wordpress/wp-content/themes/twentytwenty-child
+
+wordpress/wp-content/themes/twentytwenty-child/assets/style/.sass-cache*
+
+.sass-cache
+*.*.map

@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+    wordpress:
+        build:
+            context: './bin/wordpress'
+        container_name: 'kalyazin-wordpress'
+        links:
+            - db
+        depends_on:
+            - db
+        restart: 'always'
+        volumes:
+            - ../wordpress/wp-content:/var/www/html/wp-content
+            - ./config/php/php.ini:/usr/local/etc/php/php.ini
+            - ./config/vhosts:/etc/apache2/sites-enabled
+            - ./logs/apache2:/var/log/apache2
+        ports:
+            - '8080:80'
+        environment:
+            WORDPRESS_DB_HOST: db:3306
+            WORDPRESS_DB_USER: wordpress
+            WORDPRESS_DB_PASSWORD: wordpress
+            WORDPRESS_DB_NAME: wordpress
+    db:
+        build:
+            context: './bin/mysql'
+        container_name: 'kalyazin-database'
+        restart: 'always'
+        ports:
+            - '127.0.0.1:3306:3306'
+        volumes:
+            - ./data/mysql:/var/lib/mysql
+            - ./logs/mysql:/var/log/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: wordpress
+            MYSQL_DATABASE: wordpress
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: wordpress
+    phpmyadmin:
+        build:
+            context: './bin/phpmyadmin'
+        container_name: 'kalyazin-phpmyadmin'
+        links:
+            - db
+        environment:
+            PMA_HOST: db
+            PMA_PORT: 3306
+            PMA_USER: root
+            PMA_PASSWORD: wordpress
+            MYSQL_ROOT_PASSWORD: wordpress
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: wordpress
+        ports:
+            - '8081:80'
+        volumes:
+            - /sessions
+            - ./config/php/php.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini
