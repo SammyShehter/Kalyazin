@@ -1,0 +1,206 @@
+
+@import '../global/abstracts//variables/colors';
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vw;
+    height: 80px;
+
+    .logo {
+        margin: 0;
+    }
+
+    .top-navigation {
+        list-style-type: none;
+        padding-left: 3vw;
+        height: 100%;
+        width: 100%;
+
+        /*NON DROPDOWN SECTION*/
+        .menu {
+            margin: 0;
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .menu-item-type-custom {
+                height: inherit;
+                text-decoration: none;
+
+
+                a {
+                    padding: 0 2vw;
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+
+                    &:hover {
+                        background: $back-color;
+                    }
+                }
+
+            }
+
+
+
+            /*DROPDOWN SECTION*/
+
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .main {
+
+        .mobile-menu-call {
+            display: none;
+        }
+
+        .top-navigation {
+
+            .menu {
+                .menu-item {
+                    position: relative;
+                    cursor: pointer;
+                    padding: 0;
+
+                    a {
+                        padding: 0 2vw;
+                    }
+
+                    .sub-menu {
+                        display: none;
+                    }
+                }
+
+                .menu-item-has-children {
+
+                    a{
+                        &::after{
+                            content: '\02C5';
+                            margin-left: 6px;
+                        }
+                    }
+
+                    &:hover,
+                    &:focus-within {
+                        .sub-menu {
+                            z-index: 2;
+                            position: absolute;
+                            left: 0;
+                            display: block;
+                            visibility: visible;
+                            opacity: 1;
+                            box-shadow: 0px 7px 5px 0px rgba(50, 50, 50, 0.75);
+
+
+
+                            li {
+                                width: 15vw;
+                                background-color: white;
+                                padding: 2vh 5vw 2vh 1vw;
+                                text-decoration: none;
+                                display: block;
+
+                                &:hover {
+                                    background: $back-color;
+                                }
+
+                                a{
+                                    &::after{
+                                        content: '';
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .main {
+        width: 100%;
+        height: 100%;
+        flex-wrap: wrap;
+        padding: 2vh 0;
+
+        .logo {
+            padding: 0 0 0 2vw;
+        }
+
+        .mobile-menu-call {
+            display: flex;
+            width: 10vw;
+            order: 2;
+        }
+
+        .top-navigation {
+            display: none;
+            padding-right: 1vw;
+            order: 3;
+            width: 100%;
+            z-index: 2;
+            margin: 0;
+            padding: 0;
+            flex-direction: column;
+
+            .menu {
+                display: flex;
+                flex-direction: column;
+                padding: 2vh 0 0;
+
+                .menu-item {
+                    width: 100%;
+
+                    a {
+                        display: flex;
+                        height: 5vh;
+                        justify-content: flex-start;
+
+                        &:hover {
+                            background: unset;
+                        }
+                    }
+                }
+
+                .menu-item-has-children {
+
+                    .sub-menu {
+                        display: none;
+                        box-shadow: inset 0 0 20px 0 rgba(0, 0, 0, 0.2);
+                        height: 100%;
+
+                        li {
+
+                            padding: 0;
+                            text-decoration: none;
+                            display: block;
+
+                            a {
+                                padding: 2vh 0vw 2vh 4vw;
+                            }
+
+                        }
+                    }
+                }
+
+            }
+
+
+        }
+
+    }
+}
+
+.show {
+    display: block !important;
+}

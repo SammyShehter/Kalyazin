@@ -31,7 +31,23 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 @import "generic/box-sizing";
 
+body{
+    background: rgb(241, 241, 193);
+}
 
 a{
     text-decoration: none;
+    color: black;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1366px;
+    width: 90%;
+}
+
+@media (max-width: 1024px) {
+    .container{
+        width: 100%;
+    }
 }

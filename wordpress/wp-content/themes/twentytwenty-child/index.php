@@ -4,7 +4,7 @@
 
 <div class='sec1'>
     <div class='sec1__wrapper'>
-        <div class='left LR_Button'>
+        <div class='carousel__left LR_Button'>
             <
         </div>
         <div class='carousel'>
@@ -38,11 +38,58 @@
                 ?>
             </div>
         </div>
-        <div class='right LR_Button'>
+        <div class='carousel__right LR_Button'>
             >
         </div>
         
     </div>
+</div>
+<div class='sec2'>
+    <div class='container'>
+        <div class='sec2__title center'>
+            <h3>Афишы</h3>
+        </div>
+        <div class='sec2__afishas'>
+            <div class="row">
+        <?php
+            $args = array(
+                'post_type' => 'el_afishas',
+                'order' => 'DESC',
+                'posts_per_page' => 4
+            );
+
+            $q = new WP_Query($args);
+
+            if($q->have_posts()) {
+                while($q->have_posts()){ $q->the_post();
+                    ?>
+                        <div class="col s12 l4">
+                            <div class="card hoverable">
+                                <div class="card-image">
+                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>">
+                                    <!-- <span class="card-title"><?php the_title(); ?></span> -->
+                                </div>
+                                <div class="card-content">
+                                <h4><?php the_title(); ?></h4>
+                                <p class='valign-wrapper'><i class='material-icons'>location_on </i><?php echo $post->location; ?></p><br />
+                                <h5><?php echo $post->time; ?></h5>
+                                </div>
+                                <div class="card-action">
+                                <a href=<?php the_permalink(); ?> class="blue-text">Узнать детали</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                }
+            }
+            wp_reset_postdata();
+        ?>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+
 </div>
 <?php 
     get_footer();

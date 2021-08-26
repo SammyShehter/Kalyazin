@@ -306,7 +306,20 @@ template {
 html {
   box-sizing: border-box; }
 
+body {
+  background: #f1f1c1; }
+
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: black; }
+
+.container {
+  margin: 0 auto;
+  max-width: 1366px;
+  width: 90%; }
+
+@media (max-width: 1024px) {
+  .container {
+    width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

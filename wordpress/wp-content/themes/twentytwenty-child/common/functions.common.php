@@ -23,11 +23,14 @@ class CommonFunctions {
                 add_action('edit_form_after_title', ['WP_Privacy_Policy_Content', 'notice']);
             });
         }
+        // implementing hooks 
+        add_action( 'after_setup_theme', array($this, 'setup_hooks'));
 
         add_action('wp_enqueue_scripts', array($this, 'kalyazin_scripts'));
 
         add_action( 'wp_head', array($this, 'change_theme_color' ));
 
+        
 
     }
 
@@ -39,8 +42,14 @@ class CommonFunctions {
     }
 
     public function kalyazin_scripts(){
+        wp_enqueue_style('materialize-css','https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css');
+        wp_enqueue_style('materialize-icons','https://fonts.googleapis.com/icon?family=Material+Icons');
+        wp_enqueue_script('kalyazinWP-script1', get_stylesheet_directory_uri() . '/assets/js/main.js', array('jquery'));
+        wp_enqueue_script('materialize-script', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js');
         wp_enqueue_style('kalyazinWP-style', get_stylesheet_uri());
         wp_enqueue_style('kalyazinWP-style-main', get_stylesheet_directory_uri() . '/assets/style/global/style.css');
+        wp_enqueue_style('kalyazinWP-style-header', get_stylesheet_directory_uri() . '/assets/style/header/header.css');
+        
 
         if (is_front_page()) {
             wp_enqueue_style('kalyazinWP-style-front', get_stylesheet_directory_uri() . '/assets/style/frontPage/style.css');
@@ -54,6 +63,10 @@ class CommonFunctions {
     }
     /* CUSTOMS  END*/
 
+    public function setup_hooks() {
+        register_nav_menu( 'header-custom-menu', 'Верхняя область' );
+    }
+    
 }
 
 new CommonFunctions();

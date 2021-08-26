@@ -2,7 +2,7 @@
     .sec1__wrapper {
         position: relative;
 
-        .left {
+        .carousel__left {
             position: absolute;
             display: flex;
             align-items: center;
@@ -20,7 +20,7 @@
             z-index: 1;
         }
 
-        .right {
+        .carousel__right {
             position: absolute;
             display: flex;
             align-items: center;
@@ -40,6 +40,8 @@
 
         .carousel {
             overflow: hidden;
+            height: 70vh;
+
             &__tracker {
                 height: 70vh;
                 display: flex;
@@ -94,14 +96,6 @@
     .sec1 {
         .sec1__wrapper {
 
-            .left {
-                
-            }
-
-            .right {
-                
-            }
-
             .carousel {
                 &__tracker {
                     &__post {
@@ -118,7 +112,9 @@
 
                         &__link {
 
-                            a {}
+                            a {
+                                font-size: 1rem;
+                            }
                         }
                     }
                 }
@@ -154,7 +150,9 @@
 
                         &__link {
 
-                            a {}
+                            a {
+                                font-size: 1rem;
+                            }
                         }
                     }
                 }

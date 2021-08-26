@@ -1,6 +1,6 @@
 .sec1 .sec1__wrapper {
   position: relative; }
-  .sec1 .sec1__wrapper .left {
+  .sec1 .sec1__wrapper .carousel__left {
     position: absolute;
     display: flex;
     align-items: center;
@@ -16,7 +16,7 @@
     width: 70px;
     cursor: pointer;
     z-index: 1; }
-  .sec1 .sec1__wrapper .right {
+  .sec1 .sec1__wrapper .carousel__right {
     position: absolute;
     display: flex;
     align-items: center;
@@ -33,7 +33,8 @@
     cursor: pointer;
     z-index: 1; }
   .sec1 .sec1__wrapper .carousel {
-    overflow: hidden; }
+    overflow: hidden;
+    height: 70vh; }
     .sec1 .sec1__wrapper .carousel__tracker {
       height: 70vh;
       display: flex;
@@ -70,13 +71,37 @@
 
 @media (max-width: 1024px) {
   .sec1 .sec1__wrapper .carousel__tracker__post__title h3 {
-    font-size: 1.5rem; } }
+    font-size: 1.5rem; }
+  .sec1 .sec1__wrapper .carousel__tracker__post__link a {
+    font-size: 1rem; } }
 @media (max-width: 768px) {
   .sec1 .sec1__wrapper .left {
     display: none; }
   .sec1 .sec1__wrapper .right {
     display: none; }
   .sec1 .sec1__wrapper .carousel__tracker__post__title h3 {
+    font-size: 1rem; }
+  .sec1 .sec1__wrapper .carousel__tracker__post__link a {
     font-size: 1rem; } }
+.sec2__title {
+  text-transform: uppercase;
+  margin: 6vh auto; }
+.sec2__afishas .row .col:first-child {
+  width: 100%; }
+  .sec2__afishas .row .col:first-child .card {
+    max-width: 1366px;
+    margin: .5rem auto 1rem; }
+    .sec2__afishas .row .col:first-child .card .card-image {
+      max-height: 100%;
+      height: 500px; }
+      .sec2__afishas .row .col:first-child .card .card-image img {
+        height: 500px;
+        object-fit: cover; }
+.sec2__afishas .row .card-image {
+  max-height: 100%;
+  height: 300px; }
+  .sec2__afishas .row .card-image img {
+    height: 300px;
+    object-fit: cover; }
 
 /*# sourceMappingURL=style.css.map */
