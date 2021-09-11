@@ -83,25 +83,63 @@
     font-size: 1rem; }
   .sec1 .sec1__wrapper .carousel__tracker__post__link a {
     font-size: 1rem; } }
-.sec2__title {
-  text-transform: uppercase;
-  margin: 6vh auto; }
-.sec2__afishas .row .col:first-child {
-  width: 100%; }
-  .sec2__afishas .row .col:first-child .card {
-    max-width: 1366px;
-    margin: .5rem auto 1rem; }
-    .sec2__afishas .row .col:first-child .card .card-image {
-      max-height: 100%;
-      height: 500px; }
-      .sec2__afishas .row .col:first-child .card .card-image img {
-        height: 500px;
-        object-fit: cover; }
-.sec2__afishas .row .card-image {
-  max-height: 100%;
-  height: 300px; }
-  .sec2__afishas .row .card-image img {
-    height: 300px;
-    object-fit: cover; }
+.sec2 {
+  background: #F3DCD4; }
+  .sec2 .row {
+    margin-bottom: 0;
+    padding-bottom: 6vh; }
+  .sec2__title {
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 6vh 0 6vh; }
+    .sec2__title h3 {
+      margin: 0; }
+  .sec2__afishas .row .col:first-child {
+    width: 100%; }
+    .sec2__afishas .row .col:first-child .card {
+      max-width: 1366px;
+      margin: .5rem auto 1rem; }
+      .sec2__afishas .row .col:first-child .card .card-image {
+        max-height: 100%;
+        height: 500px; }
+        .sec2__afishas .row .col:first-child .card .card-image img {
+          height: 500px;
+          object-fit: cover; }
+  .sec2__afishas .row .card-image {
+    max-height: 100%;
+    height: 300px; }
+    .sec2__afishas .row .card-image img {
+      height: 300px;
+      object-fit: cover; }
+
+.sec3 {
+  background: #e8eee8; }
+  .sec3 .row {
+    margin-bottom: 0;
+    padding-bottom: 6vh; }
+  .sec3__title {
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 6vh 0 6vh; }
+    .sec3__title h3 {
+      margin: 0; }
+  .sec3__news .row .card-image {
+    max-height: 100%;
+    height: 400px;
+    background-color: black; }
+    .sec3__news .row .card-image img {
+      height: 400px;
+      object-fit: cover;
+      opacity: 0.4;
+      transition: opacity 0.4s, transform 0.4s; }
+      .sec3__news .row .card-image img:hover {
+        opacity: 0.7; }
+    .sec3__news .row .card-image .card-date {
+      color: #fff;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      max-width: 100%;
+      padding: 24px; }
 
 /*# sourceMappingURL=style.css.map */

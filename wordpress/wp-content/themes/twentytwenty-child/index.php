@@ -88,8 +88,44 @@
         </div>
     </div>
 </div>
-<div>
+<div class='sec3'>
+    <div class='container'>
+        <div class='sec3__title center'>
+            <h3>Новости</h3>
+        </div>
+        <div class='sec3__news'>
+            <div class="row">
+        <?php
+            $args = array(
+                'post_type' => 'el_news',
+                'order' => 'DESC',
+                'posts_per_page' => 6
+            );
 
+            $q = new WP_Query($args);
+
+            if($q->have_posts()) {
+                while($q->have_posts()){ $q->the_post();
+                    ?>
+                        <div class="col s12 l4">
+                            <div class="card hoverable">
+                                <div class="card-image">
+                                    <a href=<?php the_permalink(); ?>>
+                                        <span class="card-date"><?php echo get_the_date( 'd/m/Y' ); ?></span>
+                                        <img src="<?php echo get_the_post_thumbnail_url(); ?>">
+                                        <span class="card-title"><?php the_title(); ?></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                }
+            }
+            wp_reset_postdata();
+        ?>
+            </div>
+        </div>
+    </div>
 </div>
 <?php 
     get_footer();

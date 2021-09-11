@@ -1,16 +1,12 @@
 <?php
 include_once get_stylesheet_directory() . '/common/CPT.common.php';
 include_once get_stylesheet_directory() . '/afishas/metaboxes.afisha.php';
-include_once get_stylesheet_directory() . '/afishas/rest.afisha.php';
-include_once get_stylesheet_directory() . '/afishas/shortcodes.afisha.php';
 class Afisha extends CommonCPT{
 
     public function __construct() {
         add_action('init', array($this, 'register_CPT'));
         add_action('init', array($this, 'register_taxonomies'));
         new AfishaMetaboxes();
-        new AfishaRest();
-        new AfishaShortCodes();
     }
 
     public function register_CPT(){

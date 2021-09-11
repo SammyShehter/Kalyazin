@@ -1,7 +1,18 @@
 .sec2 {
+    background:#F3DCD4;
+    .row{
+        margin-bottom: 0;
+        padding-bottom: 6vh;
+    }
+
     &__title {
         text-transform: uppercase;
-        margin: 6vh auto;
+        margin: 0 auto;
+        padding:6vh 0 6vh;
+        
+        h3{
+            margin: 0;
+        }
     }
 
     &__afishas {

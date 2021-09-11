@@ -306,9 +306,6 @@ template {
 html {
   box-sizing: border-box; }
 
-body {
-  background: #f1f1c1; }
-
 a {
   text-decoration: none;
   color: black; }

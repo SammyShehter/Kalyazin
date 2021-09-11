@@ -1,16 +1,12 @@
 <?php
 include_once get_stylesheet_directory() . '/common/CPT.common.php';
 include_once get_stylesheet_directory() . '/banners/metaboxes.banner.php';
-include_once get_stylesheet_directory() . '/banners/rest.banner.php';
-include_once get_stylesheet_directory() . '/banners/shortcodes.banner.php';
 class Banner extends CommonCPT{
 
     public function __construct() {
         add_action('init', array($this, 'register_CPT'));
         add_action('init', array($this, 'register_taxonomies'));
         new BannerMetaboxes();
-        new BannerRest();
-        new BannerShortCodes();
     }
 
     public function register_CPT(){
