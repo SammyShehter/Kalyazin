@@ -56,10 +56,10 @@ class CommonFunctions {
             wp_enqueue_script('kalyazinWP-script', get_stylesheet_directory_uri() . '/assets/js/frontPage/main.js', array(), null, true);
         }
 
-        // if (is_single()) {
-        //     wp_enqueue_style('home', get_stylesheet_directory_uri() . '/assets/style/single.css');
-        //     wp_enqueue_script('home', get_stylesheet_directory_uri() . '/assets/js/single.js', array(), null, true);
-        // }
+        if (is_single()) {
+            wp_enqueue_style('news', get_stylesheet_directory_uri() . '/assets/style/content/news.css');
+            // wp_enqueue_script('home', get_stylesheet_directory_uri() . '/assets/js/single.js', array(), null, true);
+        }
     }
     /* CUSTOMS  END*/
 

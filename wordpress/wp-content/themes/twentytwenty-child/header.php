@@ -11,7 +11,7 @@
 <body>
 <header>
 <div class="main">
-    <h5 class="logo">Калязин</h5>
+    <a href='/'><h5 class="logo">Калязин</h5></a>
     <a class="mobile-menu-call flex-center" href="#/"><i class="material-icons">menu</i></a> 
     <?php 
         wp_nav_menu( [
